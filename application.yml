@@ -57,7 +57,7 @@ flyway:
 
 logging:
   level:
-    root: DEBUG
+    root: WARN
 
 spring-config-url: http://localhost:8888
 logstash-destination: logstash-dev.sbtds.org:4560
