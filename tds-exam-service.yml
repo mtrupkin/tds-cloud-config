@@ -1,0 +1,27 @@
+# Contains properties for the exam-service.
+exam:
+  # Specific scoring settings. Should not need to change
+  scoring:
+    engine:
+      queueThreadCount: 1
+      queueHiWaterMark: 500
+      queueLowWaterMark: 400
+      maxAttempts: 3
+      sympyTimeoutMillis: 1000
+      # If using Kubernetes deployment this should not need to be changed
+      pythonScoringUrl: http://tds-equation-scoring-service/
+
+spring:
+  ds_queries:
+    # DB Connection Information
+    jdbcUrl: jdbc:mysql://tds-db-prod.c7g9woytu6d2.us-west-2.rds.amazonaws.com:3306/exam
+  ds_commands:
+    # DB Connection Information
+    jdbcUrl: jdbc:mysql://tds-db-prod.c7g9woytu6d2.us-west-2.rds.amazonaws.com:3306/exam
+
+#Hosts defined in TDS_Build:docker-compose.yml
+exam-service:
+  session-url: http://tds-session-service
+  student-url: http://tds-student-service
+  assessment-url: http://tds-assessment-service
+  config-url: http://tds-config-service

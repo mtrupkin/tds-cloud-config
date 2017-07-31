@@ -1,0 +1,43 @@
+# Contains properties for the exam-results-transmitter-service.
+# Properties not defined in a profile are global to all profiles.  Profiles sections can override the globabl values.
+spring:
+  datasource:
+    # DB connection information
+    jdbcUrl: jdbc:mysql://tds-db-prod.c7g9woytu6d2.us-west-2.rds.amazonaws.com:3306/exam_audit
+
+# The URL settings below handle connections to the other microservices
+# The urls themselves do not need to change
+exam-results-transmitter-service:
+  session-url: http://tds-session-service
+  assessment-url: http://tds-assessment-service
+  exam-url: http://tds-exam-service
+  # At this point this should always be false as the TRT sent from TDS may not validate via the XSD
+  validate-trt-xml: false
+  # This should be configured to point at the deployed TIS Server
+  tis-url: http://tis-web-deployment.sbtds.org
+  # This needs to be configured to point at this deployed system.  This will depend on the naming style chosen by the deployer
+  tis-callback-url: https://tds-uat.sbtds.org/tis
+  # Set to true if XML should be sent to TIS.  If set to true make sure to properly configure the oauth section below
+  sendToTis: true
+  # The properties below set failure retry settings if the service can't send TRT to TIS for any reason
+  # Number of ms between retries
+  retry-initial-interval: 1000
+  # Multiplier to the retry-initial-interval time on each subsequent failure
+  retry-interval-multiplier: 2
+  # The max number of time in ms between retries
+  retry-max-interval: 5000
+  # The max amount of times the ERT will try to send a TRT to TIS before failing the message (logging it)
+  retry-amount: 3
+
+oauth:
+  # OAUTH client id and secret for oauth security
+  tis-client-id: pm
+  tis-client-secret: 'not-configured'
+  # TIS Username
+  tis-username: "not-configured"
+  # TIS Password
+  tis-password: 'not-configured'
+  # The Open AM SSO oauth URL
+  access-url: https://sso.smarterbalanced.org/auth/oauth2/access_token?realm=/sbac
+
+=

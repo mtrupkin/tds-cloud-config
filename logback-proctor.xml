@@ -1,0 +1,5 @@
+<configuration>
+    <property scope="context" name="app.context.name" value="proctor" />
+
+    <include url="\${CONFIG_SERVICE_URL}/app/default/master/logback-included-common-config.xml" />
+</configuration>

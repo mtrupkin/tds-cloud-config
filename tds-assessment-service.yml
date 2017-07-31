@@ -1,0 +1,5 @@
+# Contains properties for the tds-assessment-service.
+spring:
+  datasource:
+    # DB Connection information.
+    url: jdbc:mysql://tds-db-prod.c7g9woytu6d2.us-west-2.rds.amazonaws.com:3306/itembank

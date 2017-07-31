@@ -1,0 +1,63 @@
+# Contains global cross-service properties
+server:
+  #Does not need to be changed.
+  port: ${SERVER_PORT:8080}
+  undertow:
+    buffer-size: 8192
+    max-regions: 10
+    io-threads: 4
+    worker-threads: 32
+    direct-buffers: true
+
+spring:
+  datasource:
+    # DB Connection information.
+    username: "tds-read-only"
+    password: '{cipher}496d3916a38db6c0942c2a448e836335d7866c89bc3115558343137f65f56979'
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: 'com.mysql.jdbc.Driver'
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    validationQuery: "SELECT 1"
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+  redis:
+    # Redis server information
+    host: tds-uat-redis.eh6cet.ng.0001.usw2.cache.amazonaws.com
+  rabbitmq:
+    addresses: "rabbit-server-0.rabbit-service:5672,rabbit-server-1.rabbit-service:5672,rabbit-server-2.rabbit-service:5672"
+    # Username and password for rabbitmq
+    username: "services"
+    password: '{cipher}0021e4cf506604e24480ecc57dde8b15948e9e69b0ea04dc6d2d21971765df88'
+
+#Configure the default Spring Security user with the MANAGEMENT role
+security:
+  user:
+    # User and password for the Spring Boot Actuator information endpoints.  These endpoints provide evn and health
+    # information.
+    name: fairway-user
+    password: fairway-management-password
+    role: MANAGEMENT
+
+management:
+  health:
+    redis:
+      enabled: false
+    rabbit:
+      enabled: false
+
+tds:
+  cache:
+    implementation: redis
+
+flyway:
+  enabled: false
+
+logging:
+  level:
+    root: DEBUG
+
+spring-config-url: http://localhost:8888
+logstash-destination: logstash-dev.sbtds.org:4560

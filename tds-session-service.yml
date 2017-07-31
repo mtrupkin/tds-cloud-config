@@ -1,0 +1,10 @@
+# Contains properties for the tds-session-service.
+# Properties not defined in a profile are global to all profiles.  Profiles sections can override the global values.
+spring:
+  datasource:
+    # DB Connection information
+    url: jdbc:mysql://tds-db-prod.c7g9woytu6d2.us-west-2.rds.amazonaws.com:3306/session
+
+session-service:
+  examUrl: http://tds-exam-service/
+
