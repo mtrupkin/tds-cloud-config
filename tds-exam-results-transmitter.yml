@@ -39,5 +39,3 @@ oauth:
   tis-password: 'not-configured'
   # The Open AM SSO oauth URL
   access-url: https://sso.smarterbalanced.org/auth/oauth2/access_token?realm=/sbac
-
-=
