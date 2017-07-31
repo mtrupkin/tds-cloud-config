@@ -3,7 +3,7 @@
 spring:
   datasource:
     # DB connection information
-    jdbcUrl: jdbc:mysql://tds-db-prod.c7g9woytu6d2.us-west-2.rds.amazonaws.com:3306/exam_audit
+    jdbcUrl: jdbc:mysql://tds-mysql-db-deployment.cugsexobhx8t.us-west-2.rds.amazonaws.com:3306/exam_audit
 
 # The URL settings below handle connections to the other microservices
 # The urls themselves do not need to change

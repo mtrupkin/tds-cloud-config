@@ -14,10 +14,10 @@ exam:
 spring:
   ds_queries:
     # DB Connection Information
-    jdbcUrl: jdbc:mysql://tds-db-prod.c7g9woytu6d2.us-west-2.rds.amazonaws.com:3306/exam
+    jdbcUrl: jdbc:mysql://tds-mysql-db-deployment.cugsexobhx8t.us-west-2.rds.amazonaws.com:3306/exam
   ds_commands:
     # DB Connection Information
-    jdbcUrl: jdbc:mysql://tds-db-prod.c7g9woytu6d2.us-west-2.rds.amazonaws.com:3306/exam
+    jdbcUrl: jdbc:mysql://tds-mysql-db-deployment.cugsexobhx8t.us-west-2.rds.amazonaws.com:3306/exam
 
 #Hosts defined in TDS_Build:docker-compose.yml
 exam-service:
