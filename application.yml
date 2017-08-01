@@ -58,3 +58,13 @@ logging:
 
 spring-config-url: http://localhost:8888
 logstash-destination: logstash-dev.sbtds.org:4560
+
+---
+
+spring:
+  profile: local-development
+
+tds:
+  cache:
+    enabled: true
+    implementation: redis
