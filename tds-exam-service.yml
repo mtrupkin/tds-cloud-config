@@ -25,3 +25,21 @@ exam-service:
   student-url: http://tds-student-service
   assessment-url: http://tds-assessment-service
   config-url: http://tds-config-service
+
+---
+# Local docker-compose profile
+# Note that this requires a MySql database running on your localhost.
+# Configure the following container environment variables for database access (in TDS_Build:docker-compose.yml)
+# SBAC_JDBC_HOST=jdbc:mysql://192.168.0.139:3306 (Replace the host name with your computer's local network IP)
+# SBAC_USER=username
+# SBAC_PASSWORD=password
+spring:
+  profiles: local-docker
+  ds_queries:
+    jdbcUrl: ${sbac.jdbc.host}/exam
+    username: ${sbac.jdbc.user}
+    password: ${sbac.jdbc.password}
+  ds_commands:
+    jdbcUrl: ${sbac.jdbc.host}/exam
+    username: ${sbac.jdbc.user}
+    password: ${sbac.jdbc.password}

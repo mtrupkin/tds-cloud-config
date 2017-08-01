@@ -23,11 +23,7 @@ spring:
     throw-exception-if-no-handler-found: true
   resources:
     add-mappings: false
-  redis:
-    # Redis server information
-    host: tds-uat-redis.eh6cet.ng.0001.usw2.cache.amazonaws.com
   rabbitmq:
-    addresses: "rabbit-server-0.rabbit-service:5672,rabbit-server-1.rabbit-service:5672,rabbit-server-2.rabbit-service:5672"
     # Username and password for rabbitmq
     username: "services"
     password: '{cipher}0021e4cf506604e24480ecc57dde8b15948e9e69b0ea04dc6d2d21971765df88'

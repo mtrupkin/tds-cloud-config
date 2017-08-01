@@ -7,4 +7,3 @@ spring:
 
 session-service:
   examUrl: http://tds-exam-service/
-
