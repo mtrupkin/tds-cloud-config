@@ -46,6 +46,7 @@ management:
 
 tds:
   cache:
+    enabled: true
     implementation: redis
 
 flyway:
