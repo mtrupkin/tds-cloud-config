@@ -1,5 +1,6 @@
 # Contains properties for the tds-student-service.
 spring:
+  profile: minikube
   datasource:
     # DB Connection information
-    url: jdbc:mysql://tds-mysql-db-deployment.cugsexobhx8t.us-west-2.rds.amazonaws.com:3306/session
+    url: ${jdbc.host}/session

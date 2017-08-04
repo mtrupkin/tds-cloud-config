@@ -1,6 +1,7 @@
 # Contains properties for the tds-config-service.
 # Properties not defined in a profile are global to all profiles.  Profiles sections can override the globabl values.
 spring:
+  profile: minikube
   datasource:
     # DB Connection information
-    url: jdbc:mysql://tds-mysql-db-deployment.cugsexobhx8t.us-west-2.rds.amazonaws.com:3306/configs
+    url: ${jdbc.host}/configs

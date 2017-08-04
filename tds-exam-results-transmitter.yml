@@ -1,9 +1,10 @@
 # Contains properties for the exam-results-transmitter-service.
 # Properties not defined in a profile are global to all profiles.  Profiles sections can override the globabl values.
 spring:
+  profile: minikube
   datasource:
     # DB connection information
-    jdbcUrl: jdbc:mysql://tds-mysql-db-deployment.cugsexobhx8t.us-west-2.rds.amazonaws.com:3306/exam_audit
+    jdbcUrl: ${jdbc.host}/exam_audit
 
 # The URL settings below handle connections to the other microservices
 # The urls themselves do not need to change

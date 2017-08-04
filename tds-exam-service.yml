@@ -1,4 +1,20 @@
 # Contains properties for the exam-service.
+spring:
+  profile: minikube
+  ds_queries:
+    # DB Connection Information
+    jdbcUrl: ${sbac.jdbc.host}/exam
+  ds_commands:
+    # DB Connection Information
+    jdbcUrl: ${sbac.jdbc.host}/exam
+
+#Hosts defined in TDS_Build:docker-compose.yml
+exam-service:
+  session-url: http://tds-session-service
+  student-url: http://tds-student-service
+  assessment-url: http://tds-assessment-service
+  config-url: http://tds-config-service
+
 exam:
   # Specific scoring settings. Should not need to change
   scoring:
@@ -10,21 +26,6 @@ exam:
       sympyTimeoutMillis: 1000
       # If using Kubernetes deployment this should not need to be changed
       pythonScoringUrl: http://tds-equation-scoring-service/
-
-spring:
-  ds_queries:
-    # DB Connection Information
-    jdbcUrl: jdbc:mysql://tds-mysql-db-deployment.cugsexobhx8t.us-west-2.rds.amazonaws.com:3306/exam
-  ds_commands:
-    # DB Connection Information
-    jdbcUrl: jdbc:mysql://tds-mysql-db-deployment.cugsexobhx8t.us-west-2.rds.amazonaws.com:3306/exam
-
-#Hosts defined in TDS_Build:docker-compose.yml
-exam-service:
-  session-url: http://tds-session-service
-  student-url: http://tds-student-service
-  assessment-url: http://tds-assessment-service
-  config-url: http://tds-config-service
 
 ---
 # Local docker-compose profile

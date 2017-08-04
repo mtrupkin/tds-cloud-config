@@ -9,6 +9,13 @@ server:
     worker-threads: 32
     direct-buffers: true
 
+---
+
+spring:
+  profile: minikube
+
+jdbc.url: jdbc:mysql://tds-mysql-db-deployment.cugsexobhx8t.us-west-2.rds.amazonaws.com:3306
+
 spring:
   datasource:
     # DB Connection information.
