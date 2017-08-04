@@ -35,22 +35,6 @@ spring:
     username: "services"
     password: '{cipher}0021e4cf506604e24480ecc57dde8b15948e9e69b0ea04dc6d2d21971765df88'
 
-#Configure the default Spring Security user with the MANAGEMENT role
-security:
-  user:
-    # User and password for the Spring Boot Actuator information endpoints.  These endpoints provide evn and health
-    # information.
-    name: user
-    password: management
-    role: MANAGEMENT
-
-management:
-  health:
-    redis:
-      enabled: false
-    rabbit:
-      enabled: false
-
 tds:
   cache:
     enabled: true
@@ -70,8 +54,3 @@ logstash-destination: logstash-dev.sbtds.org:4560
 
 spring:
   profile: local-development
-
-tds:
-  cache:
-    enabled: true
-    implementation: redis
