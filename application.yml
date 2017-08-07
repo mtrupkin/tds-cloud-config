@@ -11,10 +11,6 @@ server:
 ---
 spring:
   profiles: minikube
-
-jdbc.url: jdbc:mysql://tds-mysql-db-deployment.cugsexobhx8t.us-west-2.rds.amazonaws.com:3306
-
-spring:
   datasource:
     # DB Connection information.
     username: "tds-read-only"
@@ -33,6 +29,8 @@ spring:
     username: "services"
     password: '{cipher}0021e4cf506604e24480ecc57dde8b15948e9e69b0ea04dc6d2d21971765df88'
 
+jdbc.url: jdbc:mysql://tds-mysql-db-deployment.cugsexobhx8t.us-west-2.rds.amazonaws.com:3306
+
 tds:
   cache:
     enabled: true
@@ -47,6 +45,3 @@ logging:
 
 spring-config-url: http://localhost:8888
 logstash-destination: logstash-dev.sbtds.org:4560
----
-spring:
-  profiles: local-development
