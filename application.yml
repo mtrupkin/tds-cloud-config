@@ -10,7 +10,7 @@ server:
     direct-buffers: true
 ---
 spring:
-  profile: minikube
+  profiles: minikube
 
 jdbc.url: jdbc:mysql://tds-mysql-db-deployment.cugsexobhx8t.us-west-2.rds.amazonaws.com:3306
 
@@ -49,4 +49,4 @@ spring-config-url: http://localhost:8888
 logstash-destination: logstash-dev.sbtds.org:4560
 ---
 spring:
-  profile: local-development
+  profiles: local-development
