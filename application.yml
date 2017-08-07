@@ -8,9 +8,7 @@ server:
     io-threads: 4
     worker-threads: 32
     direct-buffers: true
-
 ---
-
 spring:
   profile: minikube
 
@@ -49,8 +47,6 @@ logging:
 
 spring-config-url: http://localhost:8888
 logstash-destination: logstash-dev.sbtds.org:4560
-
 ---
-
 spring:
   profile: local-development
